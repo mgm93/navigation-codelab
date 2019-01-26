@@ -17,10 +17,10 @@
 package com.example.android.codelabs.navigation
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 
 /**
@@ -34,13 +34,13 @@ class FlowStepFragment : Fragment() {
     ): View? {
         setHasOptionsMenu(true)
 
-        val step = arguments?.getInt("step")
+//        val step = arguments?.getInt("step")
 
         // TODO STEP 9 - Use type-safe arguments - remove previous line!
-//        val step = arguments?.let {
-//            val safeArgs = FlowStepFragmentArgs.fromBundle(it)
-//            safeArgs.step
-//        }
+        val step = arguments?.let {
+            val safeArgs = FlowStepFragmentArgs.fromBundle(it)
+            safeArgs.step
+        }
         // TODO ENDSTEP 9
 
         return when (step) {
